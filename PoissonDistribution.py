@@ -1,5 +1,15 @@
-#!/usr/bin/python
 import math
+
+def calculate_target_probability(prob_home, prob_away):
+    total_probability = max(prob_home.values()) + max(prob_away.values())
+    target_percentage = (total_probability / 9) * 100
+    return target_percentage
+
+def find_closest_percentages(target_percentage, options):
+    differences = [(option, abs(target_percentage - option)) for option in options]
+    sorted_differences = sorted(differences, key=lambda x: x[1])
+    closest_percentages = [x[0] for x in sorted_differences]
+    return closest_percentages
 
 # Ask the user for match data
 print("Enter data for the match")
@@ -40,3 +50,13 @@ print("\nProbabilities for each possible result")
 for i in range(0, 10):
     for j in range(0, 10):
         print("Result {}-{}: {:.2f}%".format(i, j, prob_result[i][j] * 100))
+
+# Calculate the target probability
+target = calculate_target_probability(prob_home, prob_away)
+
+# Find the 4 closest percentages to the target percentage
+options = [prob_result[i][j] * 100 for i in range(10) for j in range(10)]
+closest_percentages = find_closest_percentages(target, options)
+
+print("Target percentage:", target)
+print("Closest percentages to target in ascending order are:", closest_percentages[:4])
