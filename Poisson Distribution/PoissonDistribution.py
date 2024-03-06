@@ -18,10 +18,14 @@ print("\nProbabilities for the home team")
 for i in range(0, 10):
     print("Score {}: {:.2f}%".format(i, prob_home[i] * 100))
 
+print("largest posibility for the home team {:.2f}%".format( max(prob_home.values()) * 100))
+
 # Display the probability for each possible away team score
 print("\nProbabilities for the away team")
 for j in range(0, 10):
     print("Score {}: {:.2f}%".format(j, prob_away[j] * 100))
+
+print("largest posibility for the away team {:.2f}%".format( max(prob_away.values()) * 100))
 
 # Calculate the probability of each possible result
 prob_result = {}
