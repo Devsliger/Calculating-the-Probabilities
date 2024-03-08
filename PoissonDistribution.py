@@ -11,7 +11,7 @@ def find_closest_percentages(target_percentage, options):
     closest_percentages = [x[0] for x in sorted_differences]
     return closest_percentages
 
-# Ask the user for match data
+# Ask the user for match dat
 print("Enter data for the match")
 lambda_value = float(input("Home team's average goal rate: "))
 mu_value = float(input("Away team's average goal rate: "))
