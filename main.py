@@ -10,7 +10,6 @@ def find_numbers_within_range(target, options, percentage=0.8):
     return within_rangfe
 
 
-# Example usage
 target_number = 7.85
 options = [7.84, 8.01, 14.56, 0.01, 8.45, 7.10, 6.98]
 numbers_within_range = find_numbers_within_range(target_number, options)
